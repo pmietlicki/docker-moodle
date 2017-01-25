@@ -25,7 +25,7 @@ ENV MOODLE_URL http://192.168.59.103
 ADD ./foreground.sh /etc/apache2/foreground.sh
 
 RUN apt-get update && \
-	apt-get -y install vim ping mysql-client pwgen python-setuptools curl git unzip apache2 php \
+	apt-get -y install vim iputils-ping mysql-client pwgen python-setuptools curl git unzip apache2 php \
 		php-gd libapache2-mod-php postfix wget supervisor php-pgsql curl libcurl3 \
 		libcurl3-dev php-curl php-xmlrpc php-intl php-mysql git-core php-xml php-mbstring php-zip php-soap && \
 	cd /tmp && \
