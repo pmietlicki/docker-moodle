@@ -25,7 +25,7 @@ ENV MOODLE_URL http://192.168.59.103
 ADD ./foreground.sh /etc/apache2/foreground.sh
 
 RUN apt-get update && \
-	apt-get -y install mysql-client pwgen python-setuptools curl git unzip apache2 php \
+	apt-get -y install vim ping mysql-client pwgen python-setuptools curl git unzip apache2 php \
 		php-gd libapache2-mod-php postfix wget supervisor php-pgsql curl libcurl3 \
 		libcurl3-dev php-curl php-xmlrpc php-intl php-mysql git-core php-xml php-mbstring php-zip php-soap && \
 	cd /tmp && \
@@ -39,7 +39,7 @@ RUN apt-get update && \
 RUN a2enmod ssl && a2ensite default-ssl # if using proxy, don't need actually secure connection
 
 # Cleanup
-RUN apt-get clean autoclean && apt-get autoremove -y && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /var/lib/dpkg/* /var/lib/cache/* /var/lib/log/*
+RUN apt-get clean autoclean && apt-get autoremove -y
 
 CMD ["/etc/apache2/foreground.sh"]
 
