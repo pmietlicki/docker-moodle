@@ -38,12 +38,12 @@ $CFG = new stdClass();
 // will be stored.  This database must already have been created         //
 // and a username/password created to access it.                         //
 
-$CFG->dbtype    = 'mysqli';      // 'pgsql', 'mariadb', 'mysqli', 'mssql', 'sqlsrv' or 'oci'
+$CFG->dbtype    = getenv('DB_TYPE');      // 'pgsql', 'mariadb', 'mysqli', 'mssql', 'sqlsrv' or 'oci'
 $CFG->dblibrary = 'native';     // 'native' only at the moment
-$CFG->dbhost    = getenv('DB_PORT_3306_TCP_ADDR');  // eg 'localhost' or 'db.isp.com' or IP
-$CFG->dbname    = getenv('DB_ENV_MYSQL_DATABASE');     // database name, eg moodle
-$CFG->dbuser    = getenv('DB_ENV_MYSQL_USER');   // your database username
-$CFG->dbpass    = getenv('DB_ENV_MYSQL_PASSWORD');   // your database password
+$CFG->dbhost    = getenv('MYSQL_HOST');  // eg 'localhost' or 'db.isp.com' or IP
+$CFG->dbname    = getenv('MYSQL_DATABASE');     // database name, eg moodle
+$CFG->dbuser    = getenv('MYSQL_USER');   // your database username
+$CFG->dbpass    = getenv('MYSQL_PASSWORD');   // your database password
 $CFG->prefix    = 'mdl_';       // prefix to use for all table names
 $CFG->dboptions = array(
     'dbpersist' => false,       // should persistent database connections be
