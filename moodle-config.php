@@ -56,7 +56,7 @@ $CFG->dboptions = array(
                                 //  (please note mysql is always using socket
                                 //  if dbhost is 'localhost' - if you need
                                 //  local port connection use '127.0.0.1')
-    'dbport'    => getenv('DB_PORT_3306_TCP_PORT'),          // the TCP port number to use when connecting
+    'dbport'    => getenv('DB_PORT'),          // the TCP port number to use when connecting
                                 //  to the server. keep empty string for the
                                 //  default port
 );
