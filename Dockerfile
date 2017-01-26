@@ -37,7 +37,6 @@ RUN apt-get update && \
 
 ADD https://download.moodle.org/download.php/direct/langpack/2.0/fr.zip /tmp/moodle-fr.zip
 RUN unzip /tmp/moodle-fr.zip -d /var/moodledata/lang
-RUN chown -R www-data:www-data /var/moodledata/lang
 
 # Enable SSL, moodle requires it
 RUN a2enmod ssl && a2ensite default-ssl # if using proxy, don't need actually secure connection
